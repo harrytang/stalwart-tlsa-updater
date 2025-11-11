@@ -1,5 +1,8 @@
 FROM node:alpine AS development
 
+# install git
+RUN apk add --no-cache git
+
 WORKDIR /usr/src/app
 
 COPY package.json pnpm-lock.yaml ./
