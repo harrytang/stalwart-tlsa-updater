@@ -44,3 +44,7 @@ $ pnpm run test:cov
 docker compose run app pnpm install
 docker compose up -d
 ```
+
+## Github Actions
+
+Go to Repo > Settings > Actions > General > Workflow permissions > Select `Read and write permissions`
