@@ -26,11 +26,15 @@ export class AppController {
       dnsRecords,
     );
 
-    return {
+    const res = {
       message: 'Event processed successfully',
       dnsRecords: dnsRecords,
       addedTLSARecords: addedTLSARecords,
       deletedTLSARecords: deletedTLSARecords,
     };
+
+    console.info(res);
+
+    return res;
   }
 }
