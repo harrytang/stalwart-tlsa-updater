@@ -6,6 +6,14 @@ This is a NestJS application that receives a webhook event and updates DNS TLSA 
 
 [Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
 
+## Biome
+
+```bash
+pnpm rm prettier eslint-config-prettier eslint-plugin-prettier eslint @eslint/js @eslint/eslintrc typescript-eslint
+rm .prettierrc eslint.config.mjs
+```
+
+
 ## Project setup
 
 ```bash
