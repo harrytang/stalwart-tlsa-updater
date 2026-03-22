@@ -8,7 +8,7 @@ on:
       - "**/**.md"
 jobs:
   build-push:
-    name: Build ARM64 image
+    name: Build image
     runs-on: ubuntu-24.04-arm
     environment:
       name: staging
