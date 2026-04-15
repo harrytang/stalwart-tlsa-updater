@@ -1,5 +1,6 @@
 import { Controller, Get, Post, Inject } from '@nestjs/common';
 import { CACHE_MANAGER, Cache } from '@nestjs/cache-manager';
+import { ConfigService } from '@nestjs/config';
 import { AppService } from './app.service';
 import { UseGuards } from '@nestjs/common';
 import { ApiGuard } from './api.guard';
@@ -9,6 +10,7 @@ export class AppController {
   constructor(
     @Inject(CACHE_MANAGER) private cacheManager: Cache,
     private readonly appService: AppService,
+    private readonly configService: ConfigService,
   ) {}
 
   @Get('healthz')
@@ -28,7 +30,8 @@ export class AppController {
     }
 
     console.info('Event is being processed');
-    await this.cacheManager.set('isProcessing', true, 5 * 60 * 1000); // 5 minutes
+    const redisTtl = parseInt(this.configService.get<string>('REDIS_TTL', '86400000'), 10);
+    await this.cacheManager.set('isProcessing', true, redisTtl);
 
     const dnsRecords = await this.appService.getDNSRecords();
     const zone = await this.appService.getZone();
