@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.4](https://github.com/harrytang/stalwart-tlsa-updater/compare/v0.1.3...v0.1.4) (2026-04-15)
+
+
+### Features
+
+* add REDIS_TTL configuration and update event processing duration ([1930248](https://github.com/harrytang/stalwart-tlsa-updater/commit/1930248fa49ca7ec78f9dfdd55f53eb406323e0e))
+
 ### [0.1.3](https://github.com/harrytang/stalwart-tlsa-updater/compare/v0.1.2...v0.1.3) (2026-04-15)
 
 ### [0.1.2](https://github.com/harrytang/stalwart-tlsa-updater/compare/v0.1.1...v0.1.2) (2025-11-12)
