@@ -28,7 +28,7 @@ export class AppController {
     }
 
     console.info('Event is being processed');
-    await this.cacheManager.set('isProcessing', true);
+    await this.cacheManager.set('isProcessing', true, 5 * 60 * 1000); // 5 minutes
 
     const dnsRecords = await this.appService.getDNSRecords();
     const zone = await this.appService.getZone();
